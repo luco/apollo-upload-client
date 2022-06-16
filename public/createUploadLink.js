@@ -107,6 +107,7 @@ module.exports = function createUploadLink({
       credentials: context.credentials,
       headers: {
         // Client awareness headers can be overridden by context `headers`.
+         "x-apollo-operation-name": operation.operationName,
         ...(name && { "apollographql-client-name": name }),
         ...(version && { "apollographql-client-version": version }),
         ...headers,
